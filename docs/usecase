@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+
+actor "Администратор" as Admin
+actor "Мастер" as Master
+actor "Пользователь" as User
+
+rectangle "Система" {
+  usecase "Авторизация" as Auth
+
+  
+  usecase "Управление мастерами" as ManageMasters
+  usecase "Добавить мастера" as AddMaster
+  usecase "Удалить мастера" as RemoveMaster
+  usecase "Контроль выполнения заказов" as MonitorOrders
+  
+  usecase "Изменение обработки заказов" as ProcessOrders
+  
+  usecase "Оформить заявку на ремонт" as CreateOrder
+  usecase "Просмотр статуса своих заказов" as CheckOrder
+
+  usecase "Выполнено" as Complited
+  usecase "Отказано" as Nocomp
+  usecase "В работе" as inwork
+}
+
+Admin --> Auth
+Admin --> ManageMasters
+Admin --> MonitorOrders
+
+ManageMasters --> AddMaster
+ManageMasters --> RemoveMaster
+
+Master --> Auth
+
+Master --> ProcessOrders
+
+ProcessOrders --> Complited
+ProcessOrders --> Nocomp
+ProcessOrders --> inwork
+
+User --> Auth
+User --> CreateOrder
+User --> CheckOrder
+@enduml
