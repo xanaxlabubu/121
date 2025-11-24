@@ -1,0 +1,57 @@
+@startuml
+entity "Client" as Client {
+  * client_id : INTEGER
+  --
+  full_name : VARCHAR(100)
+  phone_number : VARCHAR(20)
+  login : VARCHAR(50)
+  password : VARCHAR(100)
+  registration_date : DATE
+}
+
+entity "Master" as Master {
+  * master_id : INTEGER
+  --
+  full_name : VARCHAR(100)
+  phone_number : VARCHAR(20)
+  specialization_id : INTEGER
+  added_date : DATE
+}
+
+entity "Booking" as Booking {
+  * booking_id : INTEGER
+  --
+  client_id : INTEGER
+  master_id : INTEGER
+  creation_date : DATETIME
+  status_id : INTEGER
+  return_date : DATE
+  details : TEXT
+}
+
+entity "Specialization" as Specialization {
+  * specialization_id : INTEGER
+  --
+  name : VARCHAR(100)
+}
+
+entity "Status" as Status {
+  * status_id : INTEGER
+  --
+  name : VARCHAR(50)
+}
+
+entity "Administrator" as Administrator {
+  * administrator_id : INTEGER
+  --
+  full_name : VARCHAR(100)
+  login : VARCHAR(50)
+  password : VARCHAR(100)
+  access_level : VARCHAR(50)
+}
+
+Client --{ Booking
+Master --{ Booking
+Master -- Specialization
+Booking -- Status
+@enduml
