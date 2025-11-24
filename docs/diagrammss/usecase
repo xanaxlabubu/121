@@ -6,15 +6,16 @@ actor "Мастер" as Master
 actor "Пользователь" as User
 
 rectangle "Система" {
-  usecase "Авторизация" as Auth
+  usecase "Авторизация Админа" as AuthAdmin
+  usecase "Авторизация Мастера" as AuthMaster
+  usecase "Авторизация Пользователя" as AuthUser
 
-  
   usecase "Управление мастерами" as ManageMasters
   usecase "Добавить мастера" as AddMaster
   usecase "Удалить мастера" as RemoveMaster
   usecase "Контроль выполнения заказов" as MonitorOrders
   
-  usecase "Изменение обработки заказов" as ProcessOrders
+  usecase "Изменение статуса" as ProcessOrders
   
   usecase "Оформить заявку на ремонт" as CreateOrder
   usecase "Просмотр статуса своих заказов" as CheckOrder
@@ -24,22 +25,20 @@ rectangle "Система" {
   usecase "В работе" as inwork
 }
 
-Admin --> Auth
-Admin --> ManageMasters
-Admin --> MonitorOrders
+Admin --> AuthAdmin
+AuthAdmin --> ManageMasters
+AuthAdmin --> MonitorOrders
 
 ManageMasters --> AddMaster
 ManageMasters --> RemoveMaster
 
-Master --> Auth
+Master --> AuthMaster
+AuthMaster --> ProcessOrders
 
-Master --> ProcessOrders
-
-ProcessOrders --> Complited
-ProcessOrders --> Nocomp
-ProcessOrders --> inwork
-
-User --> Auth
-User --> CreateOrder
-User --> CheckOrder
+ProcessOrders -- Complited : extend
+ProcessOrders -- Nocomp : extend
+ProcessOrders -- inwork : extend
+User --> AuthUser
+AuthUser --> CreateOrder
+AuthUser --> CheckOrder
 @enduml
