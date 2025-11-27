@@ -50,6 +50,27 @@ entity "Administrator" as Administrator {
   access_level : VARCHAR(50)
 }
 
+Client }|-- Booking
+Master }|-- Booking
+Master }|-- Specialization
+Booking ||-- Status
+@enduml
+
+entity "Status" as Status {
+  * status_id : INTEGER
+  --
+  name : VARCHAR(50)
+}
+
+entity "Administrator" as Administrator {
+  * administrator_id : INTEGER
+  --
+  full_name : VARCHAR(100)
+  login : VARCHAR(50)
+  password : VARCHAR(100)
+  access_level : VARCHAR(50)
+}
+
 Client --{ Booking
 Master --{ Booking
 Master -- Specialization
