@@ -36,7 +36,8 @@
 ## ER Диаграммма проэкта
 
 
-<img width="802" height="522" alt="image" src="https://github.com/user-attachments/assets/d0054ca3-6199-42f3-af46-6e6815e276b2" />
+<img width="831" height="523" alt="image" src="https://github.com/user-attachments/assets/1d7207cf-04e5-4f1f-9c94-5d84dd5d75d6" />
+
 
 ## Use-case диаграмма
 
