@@ -42,5 +42,7 @@
 ## Use-case диаграмма
 
 
+
 ## блок-схема
 
+<img width="365" height="1019" alt="diagramms (1)" src="https://github.com/user-attachments/assets/67239d3e-2b8a-4b29-9248-fb6963ae6529" />
