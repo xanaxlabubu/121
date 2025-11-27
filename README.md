@@ -35,13 +35,12 @@
 
 ## ER Диаграммма проэкта
 
-
 <img width="831" height="523" alt="image" src="https://github.com/user-attachments/assets/1d7207cf-04e5-4f1f-9c94-5d84dd5d75d6" />
 
 
 ## Use-case диаграмма
 
-
+<img width="1048" height="443" alt="usecase (1)" src="https://github.com/user-attachments/assets/dc5acd65-563a-45f9-ad3d-05c92b7430db" />
 
 ## блок-схема
 
